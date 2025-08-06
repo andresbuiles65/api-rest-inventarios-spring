@@ -1,0 +1,27 @@
+HELP.md
+# Java
+*.class
+*.jar
+*.war
+*.log
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+# Docker
+.env
+docker-compose.override.yml
+
+#OS
+.DS_Store
+
+#Others
+node_modules/
+

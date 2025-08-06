@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: mi_postgres-1
+    restart: always
+    environment:
+      POSTGRES_DB: inventario_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password25
+    volumes:
+    - db_data:/var/lib/postgresql/data
+    ports:
+    - "5432:5432"
+    networks:
+    - backend_net
+  api_backend:
+    build: .
+    container_name: inventarios-api
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    networks:
+      - backend_net
+volumes:
+  db_data:
+networks:
+  backend_net:
+    driver: bridge
+
+
