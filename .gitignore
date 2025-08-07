@@ -2,6 +2,7 @@ HELP.md
 # Java
 *.class
 *.jar
+!target/*.jar
 *.war
 *.log
 .mvn/wrapper/maven-wrapper.jar
