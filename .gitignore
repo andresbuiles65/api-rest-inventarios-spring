@@ -4,7 +4,6 @@ HELP.md
 *.jar
 *.war
 *.log
-target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
